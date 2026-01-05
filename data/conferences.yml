@@ -1,0 +1,88 @@
+- name: CCS
+  description: ACM Conference on Computer and Communications Security
+  sources: ["ACM SIGSAC"]
+  tags: [SEC, CONF, TOP4]
+
+- name: S&P (Oakland)
+  description: IEEE Symposium on Security and Privacy
+  sources: ["IEEE Symposium on Security and Privacy"]
+  tags: [SEC, PRIV, CONF, TOP4]
+
+- name: USENIX
+  description: USENIX Security Symposium
+  sources: ["USENIX Security"]
+  tags: [SEC, PRIV, CONF, TOP4]
+
+- name: NDSS
+  description: ISOC Network and Distributed System Security Symposium
+  sources: ["NDSS"] # Not very reliable indexing from scholar, dlpb handle this one better
+  tags: [SEC, PRIV, CONF, TOP4]
+
+- name: ESORICS
+  description: European Symposium on Research in Computer Security
+  tags: [SEC, PRIV, CONF]
+
+- name: ASIACCS
+  description: ACM Asia Conference on Computer and Communications Security
+  tags: [SEC, PRIV, CONF]
+
+- name: CSF
+  description: IEEE Computer Security Foundations Symposium
+  tags: [SEC, PRIV, CONF]
+
+- name: CANS
+  description: International Conference on Cryptology and Network Security
+  tags: [SEC, CRYPTO, CONF]
+
+- name: WiSec
+  description: ACM Conference on Security and Privacy in Wireless and Mobile Networks
+  tags: [SEC, PRIV, CONF]
+
+- name: SOUPS
+  description: Symposium on Usable Privacy and Security
+  tags: [SEC, PRIV, CONF]
+
+- name: FC
+  description: Financial Cryptography and Data Security
+  tags: [SEC, CRYPTO, CONF]
+
+- name: Euro S&P
+  description: IEEE European Symposium on Security and Privacy
+  tags: [SEC, PRIV, CONF]
+
+- name: ISC
+  description: Information Security Conference
+  tags: [SEC, PRIV, CONF]
+
+- name: TrustCom
+  description: International Conference on Trust, Security and Privacy in Computing and Communications
+  tags: [SEC, PRIV, CONF]
+
+- name: FPS
+  description: International Symposium on Foundations & Practice of Security
+  tags: [SEC, PRIV, CRYPTO, CONF]
+
+- name: SecureComm
+  description: International Conference on Security and Privacy in Communication Networks
+  tags: [SEC, CONF]
+
+- name: NSS-SocialSec
+  description: International Conference on Network and System Security and International Symposium on Security and Privacy in Social Networks and Big Data
+  tags: [SEC, PRIV, CRYPTO, CONF]
+
+- name: IMF
+  description: International Conference on IT Security Incident Management and IT Forensics
+  tags: [SEC, CONF]
+
+- name: SciSec
+  description: International Conference on Science of Cyber Security
+  tags: [SEC, CONF]
+
+- name: IFIP SEC
+  description: IFIP International Information Security and Privacy Conference
+  year: 2026
+  link: https://ifipsec.org/cfp.html
+  deadline: ["2025-12-19 23:59"]
+  date: June 9 - 11
+  place: Perth, Australia
+  tags: [SEC, CONF]
