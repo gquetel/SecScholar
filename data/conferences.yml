@@ -18,17 +18,31 @@
   sources: ["NDSS"] # Not very reliable indexing from scholar, dlpb handle this one better
   tags: [SEC, PRIV, CONF, TOP4]
 
-- name: ESORICS
-  description: European Symposium on Research in Computer Security
+- name: FC
+  description: Financial Cryptography and Data Security
+  sources: ["Financial Cryptography and Data Security"]
+  tags: [SEC, CRYPTO, CONF]
+
+- name: Euro S&P
+  description: IEEE European Symposium on Security and Privacy
+  sources: ["EuroS&P"] 
   tags: [SEC, PRIV, CONF]
 
-- name: ASIACCS
-  description: ACM Asia Conference on Computer and Communications Security
+- name: ESORICS
+  description: European Symposium on Research in Computer Security
+  sources: ["European Symposium on Research in Computer Security"]
   tags: [SEC, PRIV, CONF]
 
 - name: CSF
   description: IEEE Computer Security Foundations Symposium
+  sources: ["Computer Security Foundations Symposium"]
   tags: [SEC, PRIV, CONF]
+
+- name: ASIACCS
+  description: ACM Asia Conference on Computer and Communications Security
+  sources: ["Computer and Communications Security"] #
+  tags: [SEC, PRIV, CONF]
+
 
 - name: CANS
   description: International Conference on Cryptology and Network Security
@@ -42,13 +56,7 @@
   description: Symposium on Usable Privacy and Security
   tags: [SEC, PRIV, CONF]
 
-- name: FC
-  description: Financial Cryptography and Data Security
-  tags: [SEC, CRYPTO, CONF]
 
-- name: Euro S&P
-  description: IEEE European Symposium on Security and Privacy
-  tags: [SEC, PRIV, CONF]
 
 - name: ISC
   description: Information Security Conference
