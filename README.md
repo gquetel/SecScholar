@@ -1,33 +1,32 @@
 # SecScholar
 
-This project aims at making the search of good quality papers easier. Directly querying Google Scholar can lead to an enormous amount of retrieved papers. Manually filtering good quality papers is time-consuming, however, it can be simplified using filters, notably the `source` keyword which allows to specify the venues in which the papers should be published.
+Searching for academic papers on Google Scholar can return an overwhelming number of results. **SecScholar** is a simple web tool that lets you build targeted Google Scholar queries filtered by your targetted cybersecurity conferences.
 
-This repository provides a static webpage where users can select cybersecurity venues and generate the corresponding Google Scholar `source:` filter string ready to copy-paste into a search query.
+Select the venues you care about, type your keywords, and search for your no more manually assembling `source:"..."` filters.
 
-## Features
+**Try it:** [secscholar.gquetel.fr](https://secscholar.gquetel.fr)
 
-### Search by conference
-Each conference is listed with a checkbox. Checking a conference adds its `source:"..."` clauses to a text box that can be copied directly into Google Scholar.
+See the full list of venues in [`data/conferences.yml`](data/conferences.yml).
 
-### Search by tags
-Tags allow including or excluding entire groups of conferences at once. The tag taxonomy (SEC, PRIV, CRYPTO, TOP4, CONF, SHOP) follows the convention established by [sec-deadlines](https://github.com/sec-deadlines/sec-deadlines.github.io/blob/master/_data/types.yml).
+## How it works
 
-## Data
+1. **Pick a tier** — A\*+, A+, B+, or C+ buttons select all conferences at or above a [CORE ranking](https://www.core.edu.au/conference-portal), or check individual conferences manually.
+2. **Enter keywords** — e.g. *Intrusion Detection System*.
+3. **Copy or search** — copy the generated query to your clipboard or open it directly on Google Scholar.
 
-- [`data/conferences.yml`](data/conferences.yml) — Conference entries with `name`, `description`, `sources` (Scholar source strings), and `tags`.
-- [`data/types.yml`](data/types.yml) — Tag definitions used to group conferences.
+## Contributing
 
-## Adapting this repository to another domain
-
-The project can easily be forked and adapted to other domains by modifying the data files.
-
-### Finding the list of conferences to include
+Missing a conference? PRs are welcome to add new entries.
 
 ### Finding the correct source strings
-So far, finding the correct source has been a bit of a trial and error. Typically, for a conference I would:
-1. Search for the last conference occurrence's proceedings.
-2. Cut the name to not include dates, and search on scholar using the source keyword for all results.
-3. Filter using the date (since XXXX) to only show the papers of the last conference occurrence.
-4. If the order of magnitude seems ok, the source is used.
 
-Else, try with substrings of the proceedings full name. For instance: `source:"ACM SIGSAC Conference on Computer and Communications Security"` does not work, while `source:"ACM SIGSAC"` does.
+Finding the right Scholar `source:` string is a bit of trial and error. For a given conference:
+
+1. Search for the latest proceedings on Google Scholar.
+2. Try the full proceedings name as a `source:"..."` filter.
+3. Filter by date to isolate a single edition and sanity-check the result count.
+4. If results look off, try shorter substrings — e.g. `source:"ACM SIGSAC"` works while the full conference name does not.
+
+## Credits
+
+Conference data follows conventions from [sec-deadlines](https://github.com/sec-deadlines/sec-deadlines.github.io). Rankings are based on the [CORE conference portal](https://www.core.edu.au/conference-portal).
