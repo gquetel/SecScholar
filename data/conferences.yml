@@ -43,24 +43,25 @@
   sources: ["Computer and Communications Security"] #
   tags: [SEC, PRIV, CONF]
 
-
 - name: CANS
   description: International Conference on Cryptology and Network Security
   tags: [SEC, CRYPTO, CONF]
+  sources: ["Cryptology and Network Security"]
 
 - name: WiSec
   description: ACM Conference on Security and Privacy in Wireless and Mobile Networks
   tags: [SEC, PRIV, CONF]
+  sources: ["ACM Workshop on Wireless Security and Machine Learning"]
 
 - name: SOUPS
   description: Symposium on Usable Privacy and Security
   tags: [SEC, PRIV, CONF]
-
-
+  sources: ["SOUPS"]
 
 - name: ISC
   description: Information Security Conference
   tags: [SEC, PRIV, CONF]
+  sources: ["International Conference on Information Security"]
 
 - name: TrustCom
   description: International Conference on Trust, Security and Privacy in Computing and Communications
@@ -69,10 +70,12 @@
 - name: FPS
   description: International Symposium on Foundations & Practice of Security
   tags: [SEC, PRIV, CRYPTO, CONF]
+  sources: ["International Symposium on Foundations and Practice of Security"]
 
 - name: SecureComm
   description: International Conference on Security and Privacy in Communication Networks
   tags: [SEC, CONF]
+  sources: ["SecureComm"] # A lot of paper missing but no better field found.
 
 - name: NSS-SocialSec
   description: International Conference on Network and System Security and International Symposium on Security and Privacy in Social Networks and Big Data
