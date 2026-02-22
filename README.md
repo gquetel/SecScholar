@@ -1,4 +1,4 @@
-# sec-papers-search
+# SecScholar
 
 This project aims at making the search of good quality papers easier. Directly querying Google Scholar can lead to an enormous amount of retrieved papers. Manually filtering good quality papers is time-consuming, however, it can be simplified using filters, notably the `source` keyword which allows to specify the venues in which the papers should be published.
 
