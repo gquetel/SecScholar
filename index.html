@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SecScholar</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: { sans: ['Lato', 'sans-serif'] },
+        }
+      }
+    }
+  </script>
+</head>
+<body class="bg-[#D8DDD0] font-sans text-[#333] min-h-screen">
+
+  <div class="max-w-3xl mx-auto px-4 py-10 space-y-6">
+
+    <!-- Header -->
+    <header class="text-center space-y-1">
+      <h1 class="text-3xl font-bold text-[#525a42]">SecScholar</h1>
+      <p class="text-[#707070] text-sm">Build Google Scholar <code class="bg-[#F7F3E3] px-1 rounded text-xs">source:"..."</code> queries for cybersecurity conferences</p>
+    </header>
+
+    <!-- Keyword input -->
+    <div class="bg-[#F7F3E3] rounded-lg border border-[#c5cab8] p-4">
+      <label for="keywords" class="block text-sm font-bold text-[#525a42] mb-1">Keywords</label>
+      <input id="keywords" type="text" placeholder="e.g. Intrusion Detection System"
+        class="w-full rounded border border-[#c5cab8] bg-white px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-[#525a42]/40">
+    </div>
+
+    <!-- Tier selector -->
+    <div class="bg-[#F7F3E3] rounded-lg border border-[#c5cab8] p-4">
+      <label class="block text-sm font-bold text-[#525a42] mb-2">CORE rank filter</label>
+      <div class="flex flex-wrap gap-2" id="tier-buttons">
+        <button data-tier="A*+" class="tier-btn px-4 py-1.5 rounded text-sm font-bold border border-[#c5cab8] bg-white text-[#525a42] hover:bg-[#525a42] hover:text-white transition-colors">A*+</button>
+        <button data-tier="A+" class="tier-btn px-4 py-1.5 rounded text-sm font-bold border border-[#c5cab8] bg-white text-[#525a42] hover:bg-[#525a42] hover:text-white transition-colors">A+</button>
+        <button data-tier="B+" class="tier-btn px-4 py-1.5 rounded text-sm font-bold border border-[#c5cab8] bg-white text-[#525a42] hover:bg-[#525a42] hover:text-white transition-colors">B+</button>
+        <button data-tier="C+" class="tier-btn px-4 py-1.5 rounded text-sm font-bold border border-[#c5cab8] bg-white text-[#525a42] hover:bg-[#525a42] hover:text-white transition-colors">C+</button>
+      </div>
+    </div>
+
+    <!-- Conference groups (rendered by JS) -->
+    <div id="conference-groups" class="space-y-6"></div>
+
+    <!-- Output -->
+    <div class="bg-[#F7F3E3] rounded-lg border border-[#c5cab8] p-4 space-y-3">
+      <div>
+        <label for="source-filters" class="block text-sm font-bold text-[#525a42] mb-1">Source filters</label>
+        <textarea id="source-filters" readonly rows="3"
+          class="w-full rounded border border-[#c5cab8] bg-white px-3 py-2 text-xs font-mono focus:outline-none resize-y"></textarea>
+      </div>
+      <div>
+        <label for="full-query" class="block text-sm font-bold text-[#525a42] mb-1">Full query</label>
+        <textarea id="full-query" readonly rows="3"
+          class="w-full rounded border border-[#c5cab8] bg-white px-3 py-2 text-xs font-mono focus:outline-none resize-y"></textarea>
+      </div>
+      <div class="flex flex-wrap gap-2">
+        <button id="copy-btn" class="px-4 py-2 rounded text-sm font-bold bg-[#525a42] text-white hover:bg-[#3f4633] transition-colors disabled:opacity-40 disabled:cursor-not-allowed" disabled>
+          Copy query
+        </button>
+        <a id="search-btn" class="inline-block px-4 py-2 rounded text-sm font-bold bg-[#525a42] text-white hover:bg-[#3f4633] transition-colors pointer-events-none opacity-40 text-center" target="_blank" rel="noopener">
+          Search on Google Scholar
+        </a>
+      </div>
+    </div>
+
+    <footer class="text-center text-xs text-[#707070] pb-4">
+      Data sourced from CORE rankings &amp; <a href="https://github.com/sec-deadlines/sec-deadlines.github.io" class="underline hover:text-[#525a42]" target="_blank" rel="noopener">sec-deadlines</a>
+    </footer>
+
+  </div>
+
+<script>
+const CONFERENCES = [
+  { name: "CCS", description: "ACM Conference on Computer and Communications Security", sources: ["ACM SIGSAC"], rank: "A*" },
+  { name: "S&P (Oakland)", description: "IEEE Symposium on Security and Privacy", sources: ["IEEE Symposium on Security and Privacy"], rank: "A*" },
+  { name: "USENIX", description: "USENIX Security Symposium", sources: ["USENIX Security"], rank: "A*" },
+  { name: "NDSS", description: "ISOC Network and Distributed System Security Symposium", sources: ["NDSS"], rank: "A*" },
+  { name: "FC", description: "Financial Cryptography and Data Security", sources: ["Financial Cryptography and Data Security"], rank: "A" },
+  { name: "Euro S&P", description: "IEEE European Symposium on Security and Privacy", sources: ["EuroS&P"], rank: "A" },
+  { name: "ESORICS", description: "European Symposium on Research in Computer Security", sources: ["European Symposium on Research in Computer Security"], rank: "A" },
+  { name: "CSF", description: "IEEE Computer Security Foundations Symposium", sources: ["Computer Security Foundations Symposium"], rank: "A" },
+  { name: "ASIACCS", description: "ACM Asia Conference on Computer and Communications Security", sources: ["Computer and Communications Security"], rank: "A" },
+  { name: "ASIACRYPT", description: "International Conference on the Theory and Application of Cryptology and Information Security", sources: ["ASIACRYPT"], rank: "A" },
+  { name: "ACSAC", description: "Annual Computer Security Applications Conference", sources: ["Annual Computer Security Applications Conference"], rank: "A" },
+  { name: "RAID", description: "International Symposium on Research in Attacks, Intrusions and Defenses", sources: ["RAID"], rank: "A" },
+  { name: "ARES", description: "International Conference on Availability, Reliability and Security", sources: ["Availability, Reliability and Security"], rank: "B" },
+  { name: "CANS", description: "International Conference on Cryptology and Network Security", sources: ["Cryptology and Network Security"], rank: "B" },
+  { name: "WiSec", description: "ACM Conference on Security and Privacy in Wireless and Mobile Networks", sources: ["ACM Workshop on Wireless Security and Machine Learning"], rank: "B" },
+  { name: "SOUPS", description: "Symposium on Usable Privacy and Security", sources: ["SOUPS"], rank: "B" },
+  { name: "TrustCom", description: "International Conference on Trust, Security and Privacy in Computing and Communications", sources: [], rank: "B" },
+  { name: "NSS-SocialSec", description: "International Conference on Network and System Security and International Symposium on Security and Privacy in Social Networks and Big Data", sources: ["International Conference on Network and System Security"], rank: "B" },
+  { name: "IFIP SEC", description: "IFIP International Information Security and Privacy Conference", sources: ["IFIP International Conference on ICT"], rank: "B" },
+  { name: "DIMVA", description: "Conference on Detection of Intrusions and Malware & Vulnerability Assessment", sources: ["Detection of Intrusions and Malware"], rank: "B" },
+  { name: "ISC", description: "Information Security Conference", sources: ["International Conference on Information Security"], rank: "C" },
+  { name: "SecureComm", description: "International Conference on Security and Privacy in Communication Networks", sources: ["SecureComm"], rank: "C" },
+  { name: "FPS", description: "International Symposium on Foundations & Practice of Security", sources: ["International Symposium on Foundations and Practice of Security"], rank: "Unranked" },
+  { name: "IMF", description: "International Conference on IT Security Incident Management and IT Forensics", sources: ["Digital Threats: Research and Practice"], rank: "Unranked" },
+  { name: "SciSec", description: "International Conference on Science of Cyber Security", sources: ["Science of Cyber Security"], rank: "Unranked" },
+];
+
+const RANK_ORDER = ["A*", "A", "B", "C", "Unranked"];
+const TIER_MAP = {
+  "A*+": ["A*"],
+  "A+":  ["A*", "A"],
+  "B+":  ["A*", "A", "B"],
+  "C+":  ["A*", "A", "B", "C"],
+};
+
+let activeTier = null;
+
+// --- Render conference groups ---
+const groupsEl = document.getElementById("conference-groups");
+for (const rank of RANK_ORDER) {
+  const confs = CONFERENCES.filter(c => c.rank === rank);
+  if (!confs.length) continue;
+
+  const card = document.createElement("div");
+  card.className = "bg-[#F7F3E3] rounded-lg border border-[#c5cab8] p-4";
+  card.innerHTML = `<h2 class="text-sm font-bold text-[#525a42] mb-3">${rank === "Unranked" ? "Unranked" : "CORE " + rank}</h2>`;
+
+  const list = document.createElement("div");
+  list.className = "space-y-2";
+
+  for (const conf of confs) {
+    const id = "conf-" + conf.name.replace(/[^a-zA-Z0-9]/g, "_");
+    const noSources = !conf.sources.length;
+    const row = document.createElement("label");
+    row.className = "flex items-start gap-2 cursor-pointer group";
+    row.innerHTML = `
+      <input type="checkbox" id="${id}" data-conf="${conf.name}" class="conf-cb mt-1 accent-[#525a42]" ${noSources ? "disabled" : ""}>
+      <span>
+        <span class="font-bold text-sm text-[#333] group-hover:text-[#525a42]">${conf.name}</span>
+        <span class="text-xs text-[#707070]"> — ${conf.description}</span>
+        ${noSources ? '<span class="text-xs text-[#b08030] ml-1">(no Scholar source)</span>' : ""}
+      </span>
+    `;
+    list.appendChild(row);
+  }
+
+  card.appendChild(list);
+  groupsEl.appendChild(card);
+}
+
+// --- Tier buttons ---
+const tierBtns = document.querySelectorAll(".tier-btn");
+tierBtns.forEach(btn => {
+  btn.addEventListener("click", () => {
+    const tier = btn.dataset.tier;
+    if (activeTier === tier) {
+      // Deactivate: uncheck all ranked conferences
+      activeTier = null;
+      CONFERENCES.forEach(c => {
+        if (c.rank !== "Unranked") setChecked(c.name, false);
+      });
+    } else {
+      activeTier = tier;
+      const ranks = TIER_MAP[tier];
+      CONFERENCES.forEach(c => {
+        if (c.rank !== "Unranked") {
+          setChecked(c.name, ranks.includes(c.rank));
+        }
+      });
+    }
+    renderTierButtons();
+    updateQuery();
+  });
+});
+
+function renderTierButtons() {
+  tierBtns.forEach(btn => {
+    if (btn.dataset.tier === activeTier) {
+      btn.className = "tier-btn px-4 py-1.5 rounded text-sm font-bold border border-[#525a42] bg-[#525a42] text-white transition-colors";
+    } else {
+      btn.className = "tier-btn px-4 py-1.5 rounded text-sm font-bold border border-[#c5cab8] bg-white text-[#525a42] hover:bg-[#525a42] hover:text-white transition-colors";
+    }
+  });
+}
+
+function setChecked(name, val) {
+  const cb = document.querySelector(`[data-conf="${name}"]`);
+  if (cb && !cb.disabled) cb.checked = val;
+}
+
+// --- Checkbox change → update query ---
+document.addEventListener("change", e => {
+  if (e.target.classList.contains("conf-cb")) updateQuery();
+});
+
+// --- Keywords input → update query ---
+document.getElementById("keywords").addEventListener("input", updateQuery);
+
+// --- Update query ---
+const sourceFiltersEl = document.getElementById("source-filters");
+const fullQueryEl = document.getElementById("full-query");
+const copyBtn = document.getElementById("copy-btn");
+const searchBtn = document.getElementById("search-btn");
+
+function updateQuery() {
+  const checked = Array.from(document.querySelectorAll(".conf-cb:checked"));
+  const allSources = [];
+  for (const cb of checked) {
+    const conf = CONFERENCES.find(c => c.name === cb.dataset.conf);
+    if (conf) allSources.push(...conf.sources);
+  }
+
+  const sourceFilter = allSources.length
+    ? "(" + allSources.map(s => `source:"${s}"`).join(" OR ") + ")"
+    : "";
+
+  const keywords = document.getElementById("keywords").value.trim();
+  let fullQuery = "";
+  if (keywords && sourceFilter) fullQuery = keywords + " " + sourceFilter;
+  else if (keywords) fullQuery = keywords;
+  else if (sourceFilter) fullQuery = sourceFilter;
+
+  sourceFiltersEl.value = sourceFilter;
+  fullQueryEl.value = fullQuery;
+
+  const hasQuery = fullQuery.length > 0;
+  copyBtn.disabled = !hasQuery;
+  if (hasQuery) {
+    searchBtn.href = "https://scholar.google.com/scholar?q=" + encodeURIComponent(fullQuery);
+    searchBtn.classList.remove("pointer-events-none", "opacity-40");
+  } else {
+    searchBtn.removeAttribute("href");
+    searchBtn.classList.add("pointer-events-none", "opacity-40");
+  }
+}
+
+// --- Copy button ---
+copyBtn.addEventListener("click", async () => {
+  const text = fullQueryEl.value;
+  if (!text) return;
+  try {
+    await navigator.clipboard.writeText(text);
+    copyBtn.textContent = "Copied!";
+    setTimeout(() => { copyBtn.textContent = "Copy query"; }, 1500);
+  } catch {
+    // Fallback for non-secure contexts
+    fullQueryEl.select();
+    document.execCommand("copy");
+    copyBtn.textContent = "Copied!";
+    setTimeout(() => { copyBtn.textContent = "Copy query"; }, 1500);
+  }
+});
+</script>
+
+</body>
+</html>
