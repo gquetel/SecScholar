@@ -11,3 +11,13 @@
   tag: CONF
 - name: Workshop
   tag: SHOP
+- name: CORE A*
+  tag: CORE_A*
+- name: CORE A
+  tag: CORE_A
+- name: CORE B
+  tag: CORE_B
+- name: CORE C
+  tag: CORE_C
+- name: CORE Unknown
+  tag: CORE_unknown

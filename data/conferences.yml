@@ -1,99 +1,113 @@
 - name: CCS
   description: ACM Conference on Computer and Communications Security
   sources: ["ACM SIGSAC"]
-  tags: [SEC, CONF, TOP4]
+  tags: [SEC, CONF, TOP4, CORE_A*]
 
 - name: S&P (Oakland)
   description: IEEE Symposium on Security and Privacy
   sources: ["IEEE Symposium on Security and Privacy"]
-  tags: [SEC, PRIV, CONF, TOP4]
+  tags: [SEC, PRIV, CONF, TOP4, CORE_A*]
 
 - name: USENIX
   description: USENIX Security Symposium
   sources: ["USENIX Security"]
-  tags: [SEC, PRIV, CONF, TOP4]
+  tags: [SEC, PRIV, CONF, TOP4, CORE_A*]
 
 - name: NDSS
   description: ISOC Network and Distributed System Security Symposium
   sources: ["NDSS"] # Not very reliable indexing from scholar, dlpb handle this one better
-  tags: [SEC, PRIV, CONF, TOP4]
+  tags: [SEC, PRIV, CONF, TOP4, CORE_A*]
 
 - name: FC
   description: Financial Cryptography and Data Security
   sources: ["Financial Cryptography and Data Security"]
-  tags: [SEC, CRYPTO, CONF]
+  tags: [SEC, CRYPTO, CONF, CORE_A]
 
 - name: Euro S&P
   description: IEEE European Symposium on Security and Privacy
-  sources: ["EuroS&P"] 
-  tags: [SEC, PRIV, CONF]
+  sources: ["EuroS&P"]
+  tags: [SEC, PRIV, CONF, CORE_A]
 
 - name: ESORICS
   description: European Symposium on Research in Computer Security
   sources: ["European Symposium on Research in Computer Security"]
-  tags: [SEC, PRIV, CONF]
+  tags: [SEC, PRIV, CONF, CORE_A]
 
 - name: CSF
   description: IEEE Computer Security Foundations Symposium
   sources: ["Computer Security Foundations Symposium"]
-  tags: [SEC, PRIV, CONF]
+  tags: [SEC, PRIV, CONF, CORE_A]
 
 - name: ASIACCS
   description: ACM Asia Conference on Computer and Communications Security
   sources: ["Computer and Communications Security"] #
-  tags: [SEC, PRIV, CONF]
+  tags: [SEC, PRIV, CONF, CORE_A]
+
+- name: ASIACRYPT
+  description: International Conference on the Theory and Application of Cryptology and Information Security
+  tags: [CRYPTO, CONF, CORE_A]
+  sources: ["ASIACRYPT"]
+
+- name: ACSAC
+  description: Annual Computer Security Applications Conference
+  tags: [SEC, CONF, CORE_A]
+  sources: ["Annual Computer Security Applications Conference"]
+
+- name: ARES
+  description: International Conference on Availability, Reliability and Security
+  tags: [SEC, CONF, CORE_B]
+  sources: ["Availability, Reliability and Security"]
 
 - name: CANS
   description: International Conference on Cryptology and Network Security
-  tags: [SEC, CRYPTO, CONF]
+  tags: [SEC, CRYPTO, CONF, CORE_B]
   sources: ["Cryptology and Network Security"]
 
 - name: WiSec
   description: ACM Conference on Security and Privacy in Wireless and Mobile Networks
-  tags: [SEC, PRIV, CONF]
+  tags: [SEC, PRIV, CONF, CORE_B]
   sources: ["ACM Workshop on Wireless Security and Machine Learning"]
 
 - name: SOUPS
   description: Symposium on Usable Privacy and Security
-  tags: [SEC, PRIV, CONF]
+  tags: [SEC, PRIV, CONF, CORE_B]
   sources: ["SOUPS"]
 
 - name: ISC
   description: Information Security Conference
-  tags: [SEC, PRIV, CONF]
+  tags: [SEC, PRIV, CONF, CORE_C]
   sources: ["International Conference on Information Security"]
 
 - name: TrustCom
   description: International Conference on Trust, Security and Privacy in Computing and Communications
-  tags: [SEC, PRIV, CONF]
+  tags: [SEC, PRIV, CONF, CORE_B]
 
 - name: FPS
   description: International Symposium on Foundations & Practice of Security
-  tags: [SEC, PRIV, CRYPTO, CONF]
+  tags: [SEC, PRIV, CRYPTO, CONF, CORE_unknown]
   sources: ["International Symposium on Foundations and Practice of Security"]
 
 - name: SecureComm
   description: International Conference on Security and Privacy in Communication Networks
-  tags: [SEC, CONF]
+  tags: [SEC, CONF, CORE_C]
   sources: ["SecureComm"] # A lot of paper missing but no better field found.
 
 - name: NSS-SocialSec
   description: International Conference on Network and System Security and International Symposium on Security and Privacy in Social Networks and Big Data
-  tags: [SEC, PRIV, CRYPTO, CONF]
+  tags: [SEC, PRIV, CRYPTO, CONF, CORE_B]
+  sources: ["International Conference on Network and System Security"]
 
 - name: IMF
   description: International Conference on IT Security Incident Management and IT Forensics
-  tags: [SEC, CONF]
+  tags: [SEC, CONF, CORE_unknown]
+  sources: ["Digital Threats: Research and Practice"]
 
 - name: SciSec
   description: International Conference on Science of Cyber Security
-  tags: [SEC, CONF]
+  tags: [SEC, CONF, CORE_unknown]
+  sources: ["Science of Cyber Security"]
 
 - name: IFIP SEC
   description: IFIP International Information Security and Privacy Conference
-  year: 2026
-  link: https://ifipsec.org/cfp.html
-  deadline: ["2025-12-19 23:59"]
-  date: June 9 - 11
-  place: Perth, Australia
-  tags: [SEC, CONF]
+  tags: [SEC, CONF, CORE_B]
+  sources: ["IFIP International Conference on ICT"]
