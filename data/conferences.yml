@@ -91,7 +91,7 @@
 - name: SecureComm
   description: International Conference on Security and Privacy in Communication Networks
   tags: [SEC, CONF, CORE_C]
-  sources: ["SecureComm"] # A lot of paper missing but no better field found.
+  sources: ["International Conference on Security"]
 
 - name: NSS-SocialSec
   description: International Conference on Network and System Security and International Symposium on Security and Privacy in Social Networks and Big Data
