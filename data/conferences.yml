@@ -15,7 +15,7 @@
 
 - name: NDSS
   description: ISOC Network and Distributed System Security Symposium
-  sources: ["NDSS"] # Not very reliable indexing from scholar, dlpb handle this one better
+  sources: ["NDSS"] 
   tags: [SEC, PRIV, CONF, TOP4, CORE_A*]
 
 - name: FC
@@ -122,3 +122,18 @@
   description: International Symposium on Research in Attacks, Intrusions and Defenses
   tags: [SEC, CONF, CORE_A]
   sources: ["RAID"]
+
+- name: DSN
+  description: IEEE/IFIP International Conference on Dependable Systems and Networks
+  tags: [SEC, CONF, CORE_A]
+  sources: ["International Conference on Dependable"]
+
+- name: ACNS
+  description: International Conference on Applied Cryptography and Network Security
+  tags: [SEC, CRYPTO, CONF, CORE_B]
+  sources: ["International Conference on Applied Cryptography"]
+
+- name: WOOT
+  description: USENIX Workshop on Offensive Technologies
+  tags: [SEC, CONF, CORE_unknown]
+  sources: ["WOOT"]
