@@ -33,4 +33,4 @@ Finding the right Scholar `source:` string is a bit of trial and error. For a gi
 
 ## Credits
 
-Conference data follows conventions from [sec-deadlines](https://github.com/sec-deadlines/sec-deadlines.github.io). Rankings are based on the [CORE 2023 conference portal](https://portal.core.edu.au/conf-ranks/?search=security&by=all&source=CORE2023&sort=arank&page=1).
+Conference data follows conventions from [sec-deadlines](https://github.com/sec-deadlines/sec-deadlines.github.io). Rankings are based on the [CORE 2026 conference portal](https://portal.core.edu.au/conf-ranks/?search=security&by=all&source=ICORE2026&sort=arank&page=1).

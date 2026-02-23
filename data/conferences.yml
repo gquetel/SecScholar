@@ -70,7 +70,7 @@
 
 - name: SOUPS
   description: Symposium on Usable Privacy and Security
-  tags: [SEC, PRIV, CONF, CORE_B]
+  tags: [SEC, PRIV, CONF, CORE_A]
   sources: ["SOUPS"]
 
 - name: ISC
