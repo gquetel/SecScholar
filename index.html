@@ -29,8 +29,7 @@
     <!-- Header -->
     <header class="text-center space-y-1">
       <h1 class="text-3xl font-bold text-[#525a42]">SecScholar</h1>
-      <p class="text-[#707070] text-sm">Build Google Scholar <code
-          class="bg-[#F7F3E3] px-1 rounded text-xs">source:"..."</code> queries for cybersecurity conferences</p>
+      <p class="text-[#707070] text-sm">Targeted literature search across cybersecurity conferences on Google Scholar</p>
     </header>
 
     <!-- Keyword input -->
@@ -40,23 +39,6 @@
         class="w-full rounded border border-[#c5cab8] bg-white px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-[#525a42]/40">
     </div>
 
-    <!-- Tier selector -->
-    <div class="bg-[#F7F3E3] rounded-lg border border-[#c5cab8] p-4">
-      <label class="block text-sm font-bold text-[#525a42] mb-2">CORE rank filter</label>
-      <div class="flex flex-wrap gap-2" id="tier-buttons">
-        <button data-tier="A*+"
-          class="tier-btn px-4 py-1.5 rounded text-sm font-bold border border-[#c5cab8] bg-white text-[#525a42] hover:bg-[#525a42] hover:text-white transition-colors">A*+</button>
-        <button data-tier="A+"
-          class="tier-btn px-4 py-1.5 rounded text-sm font-bold border border-[#c5cab8] bg-white text-[#525a42] hover:bg-[#525a42] hover:text-white transition-colors">A+</button>
-        <button data-tier="B+"
-          class="tier-btn px-4 py-1.5 rounded text-sm font-bold border border-[#c5cab8] bg-white text-[#525a42] hover:bg-[#525a42] hover:text-white transition-colors">B+</button>
-        <button data-tier="C+"
-          class="tier-btn px-4 py-1.5 rounded text-sm font-bold border border-[#c5cab8] bg-white text-[#525a42] hover:bg-[#525a42] hover:text-white transition-colors">C+</button>
-      </div>
-    </div>
-
-    <!-- Conference groups (rendered by JS) -->
-    <div id="conference-groups" class="space-y-6"></div>
 
     <!-- Output -->
     <div class="bg-[#F7F3E3] rounded-lg border border-[#c5cab8] p-4 space-y-3">
@@ -83,6 +65,24 @@
         </a>
       </div>
     </div>
+
+    <!-- Tier selector -->
+    <div class="bg-[#F7F3E3] rounded-lg border border-[#c5cab8] p-4">
+      <label class="block text-sm font-bold text-[#525a42] mb-2">CORE rank filter</label>
+      <div class="flex flex-wrap gap-2" id="tier-buttons">
+        <button data-tier="A*+"
+          class="tier-btn px-4 py-1.5 rounded text-sm font-bold border border-[#c5cab8] bg-white text-[#525a42] hover:bg-[#525a42] hover:text-white transition-colors">A*+</button>
+        <button data-tier="A+"
+          class="tier-btn px-4 py-1.5 rounded text-sm font-bold border border-[#c5cab8] bg-white text-[#525a42] hover:bg-[#525a42] hover:text-white transition-colors">A+</button>
+        <button data-tier="B+"
+          class="tier-btn px-4 py-1.5 rounded text-sm font-bold border border-[#c5cab8] bg-white text-[#525a42] hover:bg-[#525a42] hover:text-white transition-colors">B+</button>
+        <button data-tier="C+"
+          class="tier-btn px-4 py-1.5 rounded text-sm font-bold border border-[#c5cab8] bg-white text-[#525a42] hover:bg-[#525a42] hover:text-white transition-colors">C+</button>
+      </div>
+    </div>
+
+    <!-- Conference groups (rendered by JS) -->
+    <div id="conference-groups" class="space-y-6"></div>
 
     <footer class="text-center text-xs text-[#707070] pb-4 space-y-1">
       <p>Data sourced from <a
