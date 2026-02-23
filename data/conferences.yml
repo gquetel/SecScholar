@@ -81,6 +81,7 @@
 - name: TrustCom
   description: International Conference on Trust, Security and Privacy in Computing and Communications
   tags: [SEC, PRIV, CONF, CORE_B]
+  sources: ["International Conference on Trust"]
 
 - name: FPS
   description: International Symposium on Foundations & Practice of Security
