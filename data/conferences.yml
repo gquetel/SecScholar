@@ -115,7 +115,7 @@
 - name: DIMVA
   description: Conference on Detection of Intrusions and Malware & Vulnerability Assessment
   tags: [SEC, CONF, CORE_B]
-  sources: ["Detection of Intrusions and Malware"]
+  sources: ["International Conference on Detection of Intrusions"]
 
 - name: RAID
   description: International Symposium on Research in Attacks, Intrusions and Defenses
