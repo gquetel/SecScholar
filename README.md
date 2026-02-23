@@ -1,10 +1,10 @@
-# SecScholar
+# ScholarSec
 
-Searching for academic papers on Google Scholar can return an overwhelming number of results. **SecScholar** is a simple web tool that lets you build targeted Google Scholar queries filtered by your targetted cybersecurity conferences.
+Searching for academic papers on Google Scholar can return an overwhelming number of results. **ScholarSec** is a simple web tool that lets you build targeted Google Scholar queries filtered by your targetted cybersecurity conferences.
 
 Select the venues you care about, type your keywords, and search for your no more manually assembling `source:"..."` filters.
 
-**Try it:** [secscholar.gquetel.fr](https://secscholar.gquetel.fr)
+**Try it:** [scholarsec.gquetel.fr](https://scholarsec.gquetel.fr)
 
 See the full list of venues in [`data/conferences.yml`](data/conferences.yml).
 
