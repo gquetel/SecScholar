@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -20,6 +21,7 @@
     }
   </script>
 </head>
+
 <body class="bg-[#D8DDD0] font-sans text-[#333] min-h-screen">
 
   <div class="max-w-3xl mx-auto px-4 py-10 space-y-6">
@@ -27,7 +29,8 @@
     <!-- Header -->
     <header class="text-center space-y-1">
       <h1 class="text-3xl font-bold text-[#525a42]">SecScholar</h1>
-      <p class="text-[#707070] text-sm">Build Google Scholar <code class="bg-[#F7F3E3] px-1 rounded text-xs">source:"..."</code> queries for cybersecurity conferences</p>
+      <p class="text-[#707070] text-sm">Build Google Scholar <code
+          class="bg-[#F7F3E3] px-1 rounded text-xs">source:"..."</code> queries for cybersecurity conferences</p>
     </header>
 
     <!-- Keyword input -->
@@ -41,10 +44,14 @@
     <div class="bg-[#F7F3E3] rounded-lg border border-[#c5cab8] p-4">
       <label class="block text-sm font-bold text-[#525a42] mb-2">CORE rank filter</label>
       <div class="flex flex-wrap gap-2" id="tier-buttons">
-        <button data-tier="A*+" class="tier-btn px-4 py-1.5 rounded text-sm font-bold border border-[#c5cab8] bg-white text-[#525a42] hover:bg-[#525a42] hover:text-white transition-colors">A*+</button>
-        <button data-tier="A+" class="tier-btn px-4 py-1.5 rounded text-sm font-bold border border-[#c5cab8] bg-white text-[#525a42] hover:bg-[#525a42] hover:text-white transition-colors">A+</button>
-        <button data-tier="B+" class="tier-btn px-4 py-1.5 rounded text-sm font-bold border border-[#c5cab8] bg-white text-[#525a42] hover:bg-[#525a42] hover:text-white transition-colors">B+</button>
-        <button data-tier="C+" class="tier-btn px-4 py-1.5 rounded text-sm font-bold border border-[#c5cab8] bg-white text-[#525a42] hover:bg-[#525a42] hover:text-white transition-colors">C+</button>
+        <button data-tier="A*+"
+          class="tier-btn px-4 py-1.5 rounded text-sm font-bold border border-[#c5cab8] bg-white text-[#525a42] hover:bg-[#525a42] hover:text-white transition-colors">A*+</button>
+        <button data-tier="A+"
+          class="tier-btn px-4 py-1.5 rounded text-sm font-bold border border-[#c5cab8] bg-white text-[#525a42] hover:bg-[#525a42] hover:text-white transition-colors">A+</button>
+        <button data-tier="B+"
+          class="tier-btn px-4 py-1.5 rounded text-sm font-bold border border-[#c5cab8] bg-white text-[#525a42] hover:bg-[#525a42] hover:text-white transition-colors">B+</button>
+        <button data-tier="C+"
+          class="tier-btn px-4 py-1.5 rounded text-sm font-bold border border-[#c5cab8] bg-white text-[#525a42] hover:bg-[#525a42] hover:text-white transition-colors">C+</button>
       </div>
     </div>
 
@@ -64,82 +71,93 @@
           class="w-full rounded border border-[#c5cab8] bg-white px-3 py-2 text-xs font-mono focus:outline-none resize-y"></textarea>
       </div>
       <div class="flex flex-wrap gap-2">
-        <button id="copy-btn" class="px-4 py-2 rounded text-sm font-bold bg-[#525a42] text-white hover:bg-[#3f4633] transition-colors disabled:opacity-40 disabled:cursor-not-allowed" disabled>
+        <button id="copy-btn"
+          class="px-4 py-2 rounded text-sm font-bold bg-[#525a42] text-white hover:bg-[#3f4633] transition-colors disabled:opacity-40 disabled:cursor-not-allowed"
+          disabled>
           Copy query
         </button>
-        <a id="search-btn" class="inline-block px-4 py-2 rounded text-sm font-bold bg-[#525a42] text-white hover:bg-[#3f4633] transition-colors pointer-events-none opacity-40 text-center" target="_blank" rel="noopener">
+        <a id="search-btn"
+          class="inline-block px-4 py-2 rounded text-sm font-bold bg-[#525a42] text-white hover:bg-[#3f4633] transition-colors pointer-events-none opacity-40 text-center"
+          target="_blank" rel="noopener">
           Search on Google Scholar
         </a>
       </div>
     </div>
 
     <footer class="text-center text-xs text-[#707070] pb-4 space-y-1">
-      <p>Data sourced from <a href="https://portal.core.edu.au/conf-ranks/?search=security&amp;by=all&amp;source=CORE2023&amp;sort=arank&amp;page=1" class="underline hover:text-[#525a42]" target="_blank" rel="noopener">CORE 2023 rankings</a> &amp; <a href="https://github.com/sec-deadlines/sec-deadlines.github.io" class="underline hover:text-[#525a42]" target="_blank" rel="noopener">sec-deadlines</a></p>
-      <p>Missing a conference? <a href="https://github.com/gquetel/SecScholar" class="underline hover:text-[#525a42]" target="_blank" rel="noopener">PRs are welcome</a> to add new entries.</p>
+      <p>Data sourced from <a
+          href="https://portal.core.edu.au/conf-ranks/?search=security&amp;by=all&amp;source=CORE2023&amp;sort=arank&amp;page=1"
+          class="underline hover:text-[#525a42]" target="_blank" rel="noopener">CORE 2023 rankings</a> &amp; <a
+          href="https://github.com/sec-deadlines/sec-deadlines.github.io" class="underline hover:text-[#525a42]"
+          target="_blank" rel="noopener">sec-deadlines</a></p>
+      <p>Missing a conference? <a href="https://github.com/gquetel/SecScholar" class="underline hover:text-[#525a42]"
+          target="_blank" rel="noopener">PRs are welcome</a> to add new entries.</p>
+      <p>Source strings are heuristics — results may be incomplete for some venues due to Google Scholar&#39;s
+        <code>source:</code> field length limit.</p>
     </footer>
 
   </div>
 
-<script>
-(async function init() {
-  const groupsEl = document.getElementById("conference-groups");
-  groupsEl.innerHTML = '<p class="text-sm text-[#707070] text-center py-4">Loading conferences…</p>';
+  <script>
+      (async function init() {
+        const groupsEl = document.getElementById("conference-groups");
+        groupsEl.innerHTML = '<p class="text-sm text-[#707070] text-center py-4">Loading conferences…</p>';
 
-  let CONFERENCES;
-  try {
-    const resp = await fetch("conferences.yml");
-    if (!resp.ok) throw new Error(`HTTP ${resp.status}`);
-    const raw = await resp.text();
-    const yaml = jsyaml.load(raw);
+        let CONFERENCES;
+        try {
+          const resp = await fetch("conferences.yml");
+          if (!resp.ok) throw new Error(`HTTP ${resp.status}`);
+          const raw = await resp.text();
+          const yaml = jsyaml.load(raw);
 
-    CONFERENCES = yaml.map(c => {
-      const coreTag = (c.tags || []).find(t => t.startsWith("CORE_"));
-      let rank = "Unranked";
-      if (coreTag) {
-        const val = coreTag.slice(5); // strip "CORE_"
-        if (val !== "unknown") rank = val;
-      }
-      return {
-        name: c.name,
-        description: c.description,
-        sources: c.sources || [],
-        rank,
-      };
-    });
-  } catch (err) {
-    groupsEl.innerHTML = `<p class="text-sm text-red-600 text-center py-4">Failed to load conferences: ${err.message}</p>`;
-    return;
-  }
+          CONFERENCES = yaml.map(c => {
+            const coreTag = (c.tags || []).find(t => t.startsWith("CORE_"));
+            let rank = "Unranked";
+            if (coreTag) {
+              const val = coreTag.slice(5); // strip "CORE_"
+              if (val !== "unknown") rank = val;
+            }
+            return {
+              name: c.name,
+              description: c.description,
+              sources: c.sources || [],
+              rank,
+            };
+          });
+        } catch (err) {
+          groupsEl.innerHTML = `<p class="text-sm text-red-600 text-center py-4">Failed to load conferences: ${err.message}</p>`;
+          return;
+        }
 
-  const RANK_ORDER = ["A*", "A", "B", "C", "Unranked"];
-  const TIER_MAP = {
-    "A*+": ["A*"],
-    "A+":  ["A*", "A"],
-    "B+":  ["A*", "A", "B"],
-    "C+":  ["A*", "A", "B", "C"],
-  };
+        const RANK_ORDER = ["A*", "A", "B", "C", "Unranked"];
+        const TIER_MAP = {
+          "A*+": ["A*"],
+          "A+": ["A*", "A"],
+          "B+": ["A*", "A", "B"],
+          "C+": ["A*", "A", "B", "C"],
+        };
 
-  let activeTier = null;
+        let activeTier = null;
 
-  // --- Render conference groups ---
-  groupsEl.innerHTML = "";
-  for (const rank of RANK_ORDER) {
-    const confs = CONFERENCES.filter(c => c.rank === rank);
-    if (!confs.length) continue;
+        // --- Render conference groups ---
+        groupsEl.innerHTML = "";
+        for (const rank of RANK_ORDER) {
+          const confs = CONFERENCES.filter(c => c.rank === rank);
+          if (!confs.length) continue;
 
-    const card = document.createElement("div");
-    card.className = "bg-[#F7F3E3] rounded-lg border border-[#c5cab8] p-4";
-    card.innerHTML = `<h2 class="text-sm font-bold text-[#525a42] mb-3">${rank === "Unranked" ? "Unranked" : "CORE " + rank}</h2>`;
+          const card = document.createElement("div");
+          card.className = "bg-[#F7F3E3] rounded-lg border border-[#c5cab8] p-4";
+          card.innerHTML = `<h2 class="text-sm font-bold text-[#525a42] mb-3">${rank === "Unranked" ? "Unranked" : "CORE " + rank}</h2>`;
 
-    const list = document.createElement("div");
-    list.className = "space-y-2";
+          const list = document.createElement("div");
+          list.className = "space-y-2";
 
-    for (const conf of confs) {
-      const id = "conf-" + conf.name.replace(/[^a-zA-Z0-9]/g, "_");
-      const noSources = !conf.sources.length;
-      const row = document.createElement("label");
-      row.className = "flex items-start gap-2 cursor-pointer group";
-      row.innerHTML = `
+          for (const conf of confs) {
+            const id = "conf-" + conf.name.replace(/[^a-zA-Z0-9]/g, "_");
+            const noSources = !conf.sources.length;
+            const row = document.createElement("label");
+            row.className = "flex items-start gap-2 cursor-pointer group";
+            row.innerHTML = `
         <input type="checkbox" id="${id}" data-conf="${conf.name}" class="conf-cb mt-1 accent-[#525a42]" ${noSources ? "disabled" : ""}>
         <span>
           <span class="font-bold text-sm text-[#333] group-hover:text-[#525a42]">${conf.name}</span>
@@ -147,115 +165,116 @@
           ${noSources ? '<span class="text-xs text-[#b08030] ml-1">(no Scholar source)</span>' : ""}
         </span>
       `;
-      list.appendChild(row);
-    }
+            list.appendChild(row);
+          }
 
-    card.appendChild(list);
-    groupsEl.appendChild(card);
-  }
+          card.appendChild(list);
+          groupsEl.appendChild(card);
+        }
 
-  // --- Tier buttons ---
-  const tierBtns = document.querySelectorAll(".tier-btn");
-  tierBtns.forEach(btn => {
-    btn.addEventListener("click", () => {
-      const tier = btn.dataset.tier;
-      if (activeTier === tier) {
-        activeTier = null;
-        CONFERENCES.forEach(c => {
-          if (c.rank !== "Unranked") setChecked(c.name, false);
+        // --- Tier buttons ---
+        const tierBtns = document.querySelectorAll(".tier-btn");
+        tierBtns.forEach(btn => {
+          btn.addEventListener("click", () => {
+            const tier = btn.dataset.tier;
+            if (activeTier === tier) {
+              activeTier = null;
+              CONFERENCES.forEach(c => {
+                if (c.rank !== "Unranked") setChecked(c.name, false);
+              });
+            } else {
+              activeTier = tier;
+              const ranks = TIER_MAP[tier];
+              CONFERENCES.forEach(c => {
+                if (c.rank !== "Unranked") {
+                  setChecked(c.name, ranks.includes(c.rank));
+                }
+              });
+            }
+            renderTierButtons();
+            updateQuery();
+          });
         });
-      } else {
-        activeTier = tier;
-        const ranks = TIER_MAP[tier];
-        CONFERENCES.forEach(c => {
-          if (c.rank !== "Unranked") {
-            setChecked(c.name, ranks.includes(c.rank));
+
+        function renderTierButtons() {
+          tierBtns.forEach(btn => {
+            if (btn.dataset.tier === activeTier) {
+              btn.className = "tier-btn px-4 py-1.5 rounded text-sm font-bold border border-[#525a42] bg-[#525a42] text-white transition-colors";
+            } else {
+              btn.className = "tier-btn px-4 py-1.5 rounded text-sm font-bold border border-[#c5cab8] bg-white text-[#525a42] hover:bg-[#525a42] hover:text-white transition-colors";
+            }
+          });
+        }
+
+        function setChecked(name, val) {
+          const cb = document.querySelector(`[data-conf="${name}"]`);
+          if (cb && !cb.disabled) cb.checked = val;
+        }
+
+        // --- Checkbox change → update query ---
+        document.addEventListener("change", e => {
+          if (e.target.classList.contains("conf-cb")) updateQuery();
+        });
+
+        // --- Keywords input → update query ---
+        document.getElementById("keywords").addEventListener("input", updateQuery);
+
+        // --- Update query ---
+        const sourceFiltersEl = document.getElementById("source-filters");
+        const fullQueryEl = document.getElementById("full-query");
+        const copyBtn = document.getElementById("copy-btn");
+        const searchBtn = document.getElementById("search-btn");
+
+        function updateQuery() {
+          const checked = Array.from(document.querySelectorAll(".conf-cb:checked"));
+          const allSources = [];
+          for (const cb of checked) {
+            const conf = CONFERENCES.find(c => c.name === cb.dataset.conf);
+            if (conf) allSources.push(...conf.sources);
+          }
+
+          const sourceFilter = allSources.length
+            ? "(" + allSources.map(s => `source:"${s}"`).join(" OR ") + ")"
+            : "";
+
+          const keywords = document.getElementById("keywords").value.trim();
+          let fullQuery = "";
+          if (keywords && sourceFilter) fullQuery = keywords + " " + sourceFilter;
+          else if (keywords) fullQuery = keywords;
+          else if (sourceFilter) fullQuery = sourceFilter;
+
+          sourceFiltersEl.value = sourceFilter;
+          fullQueryEl.value = fullQuery;
+
+          const hasQuery = fullQuery.length > 0;
+          copyBtn.disabled = !hasQuery;
+          if (hasQuery) {
+            searchBtn.href = "https://scholar.google.com/scholar?q=" + encodeURIComponent(fullQuery);
+            searchBtn.classList.remove("pointer-events-none", "opacity-40");
+          } else {
+            searchBtn.removeAttribute("href");
+            searchBtn.classList.add("pointer-events-none", "opacity-40");
+          }
+        }
+
+        // --- Copy button ---
+        copyBtn.addEventListener("click", async () => {
+          const text = fullQueryEl.value;
+          if (!text) return;
+          try {
+            await navigator.clipboard.writeText(text);
+            copyBtn.textContent = "Copied!";
+            setTimeout(() => { copyBtn.textContent = "Copy query"; }, 1500);
+          } catch {
+            fullQueryEl.select();
+            document.execCommand("copy");
+            copyBtn.textContent = "Copied!";
+            setTimeout(() => { copyBtn.textContent = "Copy query"; }, 1500);
           }
         });
-      }
-      renderTierButtons();
-      updateQuery();
-    });
-  });
-
-  function renderTierButtons() {
-    tierBtns.forEach(btn => {
-      if (btn.dataset.tier === activeTier) {
-        btn.className = "tier-btn px-4 py-1.5 rounded text-sm font-bold border border-[#525a42] bg-[#525a42] text-white transition-colors";
-      } else {
-        btn.className = "tier-btn px-4 py-1.5 rounded text-sm font-bold border border-[#c5cab8] bg-white text-[#525a42] hover:bg-[#525a42] hover:text-white transition-colors";
-      }
-    });
-  }
-
-  function setChecked(name, val) {
-    const cb = document.querySelector(`[data-conf="${name}"]`);
-    if (cb && !cb.disabled) cb.checked = val;
-  }
-
-  // --- Checkbox change → update query ---
-  document.addEventListener("change", e => {
-    if (e.target.classList.contains("conf-cb")) updateQuery();
-  });
-
-  // --- Keywords input → update query ---
-  document.getElementById("keywords").addEventListener("input", updateQuery);
-
-  // --- Update query ---
-  const sourceFiltersEl = document.getElementById("source-filters");
-  const fullQueryEl = document.getElementById("full-query");
-  const copyBtn = document.getElementById("copy-btn");
-  const searchBtn = document.getElementById("search-btn");
-
-  function updateQuery() {
-    const checked = Array.from(document.querySelectorAll(".conf-cb:checked"));
-    const allSources = [];
-    for (const cb of checked) {
-      const conf = CONFERENCES.find(c => c.name === cb.dataset.conf);
-      if (conf) allSources.push(...conf.sources);
-    }
-
-    const sourceFilter = allSources.length
-      ? "(" + allSources.map(s => `source:"${s}"`).join(" OR ") + ")"
-      : "";
-
-    const keywords = document.getElementById("keywords").value.trim();
-    let fullQuery = "";
-    if (keywords && sourceFilter) fullQuery = keywords + " " + sourceFilter;
-    else if (keywords) fullQuery = keywords;
-    else if (sourceFilter) fullQuery = sourceFilter;
-
-    sourceFiltersEl.value = sourceFilter;
-    fullQueryEl.value = fullQuery;
-
-    const hasQuery = fullQuery.length > 0;
-    copyBtn.disabled = !hasQuery;
-    if (hasQuery) {
-      searchBtn.href = "https://scholar.google.com/scholar?q=" + encodeURIComponent(fullQuery);
-      searchBtn.classList.remove("pointer-events-none", "opacity-40");
-    } else {
-      searchBtn.removeAttribute("href");
-      searchBtn.classList.add("pointer-events-none", "opacity-40");
-    }
-  }
-
-  // --- Copy button ---
-  copyBtn.addEventListener("click", async () => {
-    const text = fullQueryEl.value;
-    if (!text) return;
-    try {
-      await navigator.clipboard.writeText(text);
-      copyBtn.textContent = "Copied!";
-      setTimeout(() => { copyBtn.textContent = "Copy query"; }, 1500);
-    } catch {
-      fullQueryEl.select();
-      document.execCommand("copy");
-      copyBtn.textContent = "Copied!";
-      setTimeout(() => { copyBtn.textContent = "Copy query"; }, 1500);
-    }
-  });
-})();
-</script>
+      })();
+  </script>
 
 </body>
+
 </html>

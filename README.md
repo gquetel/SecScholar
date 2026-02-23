@@ -8,6 +8,10 @@ Select the venues you care about, type your keywords, and search for your no mor
 
 See the full list of venues in [`data/conferences.yml`](data/conferences.yml).
 
+**Note:** Source strings are heuristics. While some precisely capture all papers from a conference, others may return incomplete results.  Google Scholar's `source:` field has a maximum length, which sometimes forces the use of shorter, incomplete substrings. For instance: 
+`source:"International Conference on Trust, Security and Privacy in Computing and Communications"` does not return anything, while `source:"International Conference on Trust"` works. 
+
+
 ## How it works
 
 1. **Pick a tier** — A\*+, A+, B+, or C+ buttons select all conferences at or above a [CORE ranking](https://www.core.edu.au/conference-portal), or check individual conferences manually.
@@ -29,4 +33,4 @@ Finding the right Scholar `source:` string is a bit of trial and error. For a gi
 
 ## Credits
 
-Conference data follows conventions from [sec-deadlines](https://github.com/sec-deadlines/sec-deadlines.github.io). Rankings are based on the [CORE conference portal](https://www.core.edu.au/conference-portal).
+Conference data follows conventions from [sec-deadlines](https://github.com/sec-deadlines/sec-deadlines.github.io). Rankings are based on the [CORE 2023 conference portal](https://portal.core.edu.au/conf-ranks/?search=security&by=all&source=CORE2023&sort=arank&page=1).
